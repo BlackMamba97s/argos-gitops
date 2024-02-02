@@ -1,0 +1,18 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: argos-gitops
+  description: Contains the ArgoCD manifests for argos
+  annotations:
+    argocd/app-name: argos-gitops
+    backstage.io/kubernetes-id: argos-gitops
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: BlackMamba97s/argos-gitops
+spec:
+  type: gitops
+  system: argocd
+  lifecycle: production
+  owner: guest
+  dependsOn:
+    - component:default/argo-gitops
